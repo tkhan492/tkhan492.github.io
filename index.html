@@ -1,94 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <!-- Creating Top Nav Bar from source:https://www.w3schools.com/howto/howto_js_topnav_responsive.asp-->
-    <link rel="stylesheet" type="text/css" href="pagestyle.css">   
-    <title>ResumeOnGitHub</title> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial;
 }
 
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #04AA6D;
+/* Style tab links */
+.tablink {
+  background-color: #555;
   color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
 }
 
-.topnav .icon {
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
   display: none;
+  padding: 100px 20px;
+  height: 100%;
 }
 
-@media screen and (max-width: 900px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
+#About {background-color:  rgb(204,204,179);}
+#Work Experience {background-color:  rgb(204,204,179);}
+#Education {background-color:  rgb(204,204,179);}
+#Project {background-color:  rgb(204,204,179);}
 </style>
 </head>
 <body>
-    <div class="topnav" id="myTopnav">
-        <a href="#profile" class="active">Profile</a>
-        <a href="#pastgroupprojects">Past Projects</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-        </a>
-    </div>
-<main> 
-    <section>
-        <div style="padding-left: 16px">
-            <h1 class="centertext">Tanvir Khan</h1>
-            <h3 class="centertext">East York, ON</h3>
-            <h3 class="centertext">Phone# 6474394167</h3>
-            <h3 class="centertext">Email:tkhan492@gmail.com</h3>
-            <img class="centerPic"src="Tanvir.jpg" alt="Tanvir_Image>"
-        <p>To obtain employment with a company that offers a positve atmosphere to learn and implement new skills and technologies for the betterment of the origanization</p>
-    </div>
-    </section>
-    <section>
-            <h2>Personal Details</h2>
-            <p>Highest Level of Education: Bachelor's Degree</p>
-    </section>
-    <section>
-        <h2>Work Experience</h2>
+
+<button class="tablink" onclick="openPage('About', this, 'lightolive')">About</button>
+<button class="tablink" onclick="openPage('Work Experience', this, 'lightolive')" id="defaultOpen">Work Experience</button>
+<button class="tablink" onclick="openPage('Education', this, 'lightolive')">Education</button>
+<button class="tablink" onclick="openPage('Project', this, 'orange')">Project</button>
+
+<div id="About" class="tabcontent">
+  <h1 class="centertext">Tanvir Khan</h1>
+  <h3 class="centertext">East York, ON</h3>
+  <h3 class="centertext">Phone# 6474394167</h3>
+  <h3 class="centertext">Email:tkhan492@gmail.com</h3>
+  <img class="centerPic"src="Tanvir.jpg" alt="Tanvir_Image>"
+  <p>To obtain employment with a company that offers a positve atmosphere to learn and implement new skills and technologies for the betterment of the origanization</p>
+  <section>
+       <h2>Personal Details</h2>
+       <p>Highest Level of Education: Bachelor's Degree</p>
+  </section>
+</div>
+
+<div id="Work Experience" class="tabcontent">
+  <section>
+  <h2>Work Experience</h2>
         <h3>Office Administrator/HR Support</h3>
         <h4>November 2020 to Present</h4>
         <p>General administrative duties including reception, filing, organizing documents etc</p>
@@ -99,7 +76,7 @@ body {
         <p>Maintaining and updating employee files when required and maintaining logs</p>
         <p>Scheduling Support </p>
         <p>Covering scheduling absences</p>
-    </section>
+    </section> 
     <section>
         <h3>GIS Trainee</h3>
         <h4>Geo-Planning for Advanced Development (GPAD) Training Center - Dhaka, Bangladesh</h4>
@@ -119,8 +96,10 @@ body {
         <p> Assist management in budgeting and sale forecasting for the upcoming year, along with implementing steps in order to reach those goals</p>
         <p> Organizational abilities such as find files and phone numbers at a moment's notice and maintain a tidy work area.</p>
     </section>
-    <section>
-        <h2>Education</h2>
+</div>
+
+<div id="Education" class="tabcontent">
+  <h2>Education</h2>
         <h3>Graduate Certificate in Geographic Information Systems - Application Specialist</h3>
         <h4>Fleming College - Lindsay, ON</h4>
         <h4>September 2021 to Present</h4>
@@ -141,6 +120,42 @@ body {
         <h4>EAST YORK COLLEGIATE INSTITUTE - Toronto, ON</h4>
         <h4>September 2006 to June 2010</h4>
     </section>
-</main>
+</div>
+
+<div id="Project" class="tabcontent">
+  <h2>Group Projects</h2>
+        <h3>Monitoring Forest Fires in Alberta & British Columbia</h3>
+        <h4>May 2019 to June 2019</h4>
+        <p>This final group project from Environmental Remote Sensing course, have trained me how remote sensing utilizes satellite/airborne based sensors to collect information about a given area, and to understand the behaviour of wildfire spread across province of Alberta and whole Canada. During the presentation, I have discussed the different electromagnetic spectrum and the interaction of electromagnetic radiation with the atmosphere that helped acquire maps and images of forests and water bodies. Also discussed how poor fire-management practice is bringing destruction to the forest ecosystem.</p>
+        <a class="projectlink" href="https://docs.google.com/presentation/d/1ScQFrbneskJE8lSqA4j1C2ASBRNz1Mr0QEoheoH9iNI/edit?usp=sharing" >View Presentation</a>
+        <a class="projectlink" href="https://drive.google.com/file/d/1ZUeI7BrgKIY9368BcBDuLShcHgXh9qp2/view?usp=sharing">View Report</a>
+    </section>
+    <section>
+        <h3>Socio-economic comparisons between ICIMOD countries to address gender disparities</h3>
+        <h4>September 2018 to April 2019</h4>
+        <p>This Cohort Capstone Project serves as a preliminary analysis for a comparative study on the socioeconomic data from Hindu Kush Himalayan (HKH) countries on all municipal, provincial and national levels that cover general demographic information as well as gender inequalities. Project focuses on data from Nepal and Bangladesh in comparison to data collected from Canada. It addresses the commonalities and differences between results from the studied countries.</p>
+        <a class="projectlink" href="https://drive.google.com/file/d/1RxtAVm9zmJu0gYjT3qaJZv8sErzHCCIQ/view?usp=drivesdk">View Capstone Project Report</a>
+    </section>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
 </body>
-</html>
+</html> 
