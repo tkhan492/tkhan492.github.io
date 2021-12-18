@@ -1,0 +1,148 @@
+/* pagestyle.css */
+/* Author: Tanvir Khan */
+/* Date Created: December 17, 2021 */
+/* Date Modified: */
+
+/* Source: https://www.w3schools.com/html/html_responsive.asp */
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    /* BODY SECTION */
+    /* Specify the margin. Source: https://www.w3schools.com/css/css_margin.asp */
+    margin: 0;
+    /* Specify the background color. Source: https://www.w3schools.com/cssref/pr_background-color.asp */
+    background-color: rgb(255,80,80);
+    /* Specify the font. Source: https://www.w3schools.com/cssref/pr_font_font-family.asp */
+    font-family: Arial, Verdana, sans-serif;
+    /* Specify the letter spacing between characters. Source: https://www.w3schools.com/cssref/pr_text_letter-spacing.asp */
+    letter-spacing: 1px;
+}
+
+nav{
+    /* NAV BAR STYLE / Source: https://www.w3schools.com/css/css_navbar.asp and https://www.w3schools.com/css/css_navbar_horizontal.asp */
+    /* Specify the background color */
+    background-color: rgb(89,89,89);
+    position: fixed;
+    top: 0px;
+    width: 100%;
+	margin: 0px;
+    padding: 0px;
+}
+/* Source: https://www.w3schools.com/howto/howto_js_topnav_responsive.asp 
+	Hides nav bar symbol when not in use on smaller screens and hides the regular navigation links from view when the nav bar symbol is in use */
+.navbar { 
+	overflow: hidden;
+}
+.navbar .icon {
+	display: none;
+}
+
+
+nav a{
+      /* Display links as block elements and have them to float next to each other */
+    display: block;
+    float: left;
+    /* Specify the padding */
+    padding: 20px;
+    /* Remove the decoration of the text */
+    text-decoration: none;
+    /* Specify the color, the font weight, the letter spacing, and the alignment of the text */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    /* Add bottom border. Source: https://www.w3schools.com/howto/howto_css_navbar_border.asp */
+    border-bottom: 7px solid transparent;
+
+}
+/* Specify the style of the link of active page so that the users are able to know which page they are on */
+nav a.active {
+    background-color:black;
+    border-bottom: 4px solid steelblue;
+}
+/* Specify the style of the link on hover */
+nav a:hover {
+    background-color: rgb(96,64,31);
+    border-bottom: 5px solid darkbrown;
+}
+
+main{
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px; 
+    margin-bottom: 50px;
+}
+
+h1{
+	color: rgb(38,38,38);
+	text-align: center;
+	font-size: 175%
+}
+h2{
+	color: rgb(64,64,64);
+	text-align: center;
+	font-size: 120%
+h3{
+	color: rgb(89,89,89);
+	text-align: center;
+	font-size: 100%
+}
+p{
+	color: rgb(68,59,64);
+	font-size: 100%
+}
+.centertext {
+    text-align:center;
+}
+
+footer {
+	background-color: rgb(88,89,90);                 
+    padding: 10px;
+    font-size: 40%;
+}
+#footertext {
+        text-align: center;
+	color: white;
+}
+.centerPic {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: auto;
+	max-width: 500px;
+    padding: 10px;
+}
+#logo {
+    display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+    height: auto;
+    max-width: 800px;
+    padding: 10px;
+}
+
+
+ /* Source: https://www.w3schools.com/html/html_responsive.asp */
+@media screen and (max-width: 800px) {
+  .navbar a:not(:first-child) {display: none;}
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 800px) {
+  .navbar.responsive {position: relative;}
+  .navbar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
