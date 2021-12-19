@@ -1,1 +1,1 @@
-# Creating Personal Webpage for GEOM101
+# Creating Personal Webpage
