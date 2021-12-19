@@ -84,7 +84,15 @@ a:link, a:visited {
     display: inline-block;
     border-radius: 15px;
   }
-
+.aboutlink {
+	color: rgb(0, 102, 0);
+	background-color: rgb(0, 153, 0);
+	padding: 13px 23px;
+	text-align:center;
+	text-decoration:none;
+	display: inline-block;
+	border-radius:18px;
+}
 img{
     border-radius: 12%;
 }
